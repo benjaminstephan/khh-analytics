@@ -682,11 +682,21 @@ p { margin: 0; }
 }
 .disclaimer strong { color: var(--muted); font-weight: 600; }
 
+.footer-address {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--faint);
+  font-style: normal;
+}
+
 .copyright {
   margin-top: 28px;
   font-size: 0.8rem;
   color: var(--faint);
 }
+
+.footer-address + .copyright { margin-top: 8px; }
 
 /* --- Reveal animation ---------------------------------------------------- */
 
