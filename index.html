@@ -128,7 +128,7 @@
       </div>
       <div class="prose reveal">
         <p>The strong form of the efficient market hypothesis has never survived contact with real data. What survives is something more useful and considerably harder to exploit. Markets are <em>mostly</em> efficient, most of the time, for most participants. Whatever is left over is faint, non-stationary and buried in noise.</p>
-        <p>Machine learning is how we decipher that residual. The structure that remains shifts with regime, interacts nonlinearly across hundreds of features and hides beneath signal-to-noise ratios far below anything a human analyst detects by inspection. That is precisely where modern statistical learning outperforms intuition.</p>
+        <p>Machine learning is how we decipher that residual. The relationships worth trading are weak and conditional: they depend on many variables interacting at once rather than on any single one, and they predict returns in some market environments while breaking down in others. Neither the eye nor a simple linear model reliably picks that up. We fit models that can represent those interactions, then test every candidate on periods and market environments it was never trained on and keep only the ones that still work.</p>
         <p>The difficulty is not building models that perform well on historical data. It is building models that <strong>generalize</strong>, meaning models that keep working on data they have never seen and through markets that no longer resemble the ones they were trained on. Most quantitative research never clears that bar. Our entire process is organized around that single distinction.</p>
       </div>
     </div>
