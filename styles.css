@@ -128,7 +128,6 @@ p { margin: 0; }
 }
 
 .section-label { color: var(--faint); }
-.section-label::first-line { color: inherit; }
 
 .lede {
   font-size: clamp(1.02rem, 1.55vw, 1.22rem);
@@ -472,7 +471,8 @@ p { margin: 0; }
 .steps li {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
-  gap: clamp(24px, 5vw, 64px);
+  column-gap: clamp(24px, 5vw, 64px);
+  row-gap: 0;
   padding: 38px 0;
   border-bottom: 1px solid var(--line);
   transition: background 0.35s ease;
@@ -480,18 +480,29 @@ p { margin: 0; }
 
 .steps li:hover { background: rgba(255, 255, 255, 0.017); }
 
+/* Explicit placement: the number spans both rows in column 1, while the
+   heading and body stack in column 2. Without this, three children
+   auto-place into a 2-column grid and the paragraph falls under the number. */
 .step-num {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   font-family: var(--serif);
   font-size: 1.55rem;
   color: var(--accent);
   opacity: 0.75;
-  line-height: 1.2;
+  line-height: 1.35;
   font-variant-numeric: tabular-nums;
 }
 
-.steps h3 { margin-bottom: 12px; }
+.steps h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: 12px;
+}
 
 .steps p {
+  grid-column: 2;
+  grid-row: 2;
   color: var(--muted);
   font-size: 1.0rem;
   max-width: 68ch;
@@ -725,7 +736,8 @@ p { margin: 0; }
     padding: 13px 20px !important;
   }
 
-  .steps li { grid-template-columns: 1fr; gap: 10px; }
+  .steps li { grid-template-columns: 1fr; row-gap: 8px; }
+  .steps li > * { grid-column: 1; grid-row: auto; }
   .step-num { font-size: 1.15rem; }
   .hero-chart { height: 42%; opacity: 0.4; }
   .btn { width: 100%; justify-content: center; }
