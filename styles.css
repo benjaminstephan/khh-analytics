@@ -557,10 +557,6 @@ p { margin: 0; }
 /* --- Contact ------------------------------------------------------------- */
 
 .contact-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(40px, 6vw, 80px);
-  align-items: start;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -580,41 +576,13 @@ p { margin: 0; }
   pointer-events: none;
 }
 
-.contact-copy .btn { margin-top: 32px; }
-
-.contact-details {
-  display: grid;
-  gap: 32px;
+.contact-copy {
   position: relative;
   z-index: 1;
-  padding-top: 6px;
+  max-width: 54ch;
 }
 
-.detail h4 {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-  color: var(--faint);
-  margin-bottom: 10px;
-}
-
-.detail p {
-  color: var(--text);
-  font-size: 0.99rem;
-  line-height: 1.65;
-}
-
-.detail a {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.detail a:hover {
-  color: var(--accent-soft);
-  border-bottom-color: rgba(201, 168, 106, 0.45);
-}
+.contact-copy .btn { margin-top: 32px; }
 
 /* --- 404 ----------------------------------------------------------------- */
 
@@ -748,7 +716,6 @@ p { margin: 0; }
 @media (max-width: 960px) {
   .grid-2 { grid-template-columns: 1fr; }
   .col-sticky { position: static; }
-  .contact-panel { grid-template-columns: 1fr; }
   .pillars { grid-template-columns: 1fr; }
 }
 
